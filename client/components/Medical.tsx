@@ -1,3 +1,4 @@
+
 import { useMedical } from "../hooks/useMedical"
 
 export function Medical() {
@@ -8,6 +9,11 @@ export function Medical() {
   return (
     <div>
       <div>This is the mediccal component</div>
+      {medical.map((data) => (
+        <ul key={data.id}>
+        <p>{data.ashma}</p>
+        </ul>
+      ))}
       <div></div>
       <div></div>
     </div>

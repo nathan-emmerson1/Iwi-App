@@ -15,3 +15,9 @@ export async function getUserById(id: number): Promise<UserData> {
   })
 
 }
+export async function getUserWithMedical(): Promise<void> {
+  return request.get(rootUrl + '/users/medical').then((res) => {
+    return res.body
+  })
+
+}
