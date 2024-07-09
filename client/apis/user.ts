@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { User, UserData } from '../../models/user'
+import { User, UserData, UserWithMedical } from '../../models/user'
 
 const rootUrl = '/api/v1'
 
@@ -9,14 +9,15 @@ export async function getUser(): Promise<User> {
   })
 }
 
-export async function getUserById(id: number): Promise<UserData> {
-  return request.get(rootUrl + `/users/${id}`).then((res) => {
-    return res.body
-  })
+// export async function getUserById(id: number): Promise<UserData> {
+//   return request.get(rootUrl + `/users/${id}`).then((res) => {
+//     return res.body
+//   })
 
-}
-export async function getUserWithMedical(): Promise<void> {
-  return request.get(rootUrl + '/users/medical').then((res) => {
+// }
+export async function getUserInfo(id: number): Promise<UserWithMedical> {
+  console.log('hiting user info')
+  return request.get(rootUrl + `/users/${id}`).then((res) => {
     return res.body
   })
 

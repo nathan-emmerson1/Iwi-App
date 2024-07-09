@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom'
 
 function Nav() {
   return (
@@ -8,13 +8,13 @@ function Nav() {
   </div>
   <div className="flex-none">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Link</a></li>
+      <li><a>Log in</a></li>
       <li>
         <details>
-          <summary>Parent</summary>
+          <summary>More</summary>
           <ul className="bg-base-100 rounded-t-none p-2">
-            <li><a>Link 1</a></li>
-            <li><a>Link 2</a></li>
+            <Link to={'/'}> <li>  <p>Home</p>  </li> </Link>
+            <li><a>Log out</a></li>
           </ul>
         </details>
       </li>

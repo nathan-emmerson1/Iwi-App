@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getUser, getUserById, getUserWithMedical } from '../apis/user'
+import { getUser, getUserById, getUserInfo, getUserWithMedical } from '../apis/user'
 
 
 export function useUsers() {
@@ -7,22 +7,22 @@ export function useUsers() {
     queryKey: ['users'],
     queryFn: getUser,
   })
-  return query
+  return {...query}
 }
 
-export function useUserById(id: number){
+// export function useUserById(id: number){
   
-  const query = useQuery({
-    queryKey: ['userById', id],
-    queryFn: () => getUserById(id)
-  })
-  return query
-}
+//   const query = useQuery({
+//     queryKey: ['userById', id],
+//     queryFn: () => getUserById(id)
+//   })
+//   return query
+// }
 
-export function useUserMeicalInfo(){
+export function useUserMeicalInfo(id: number){
   const query = useQuery({
-    queryKey:['usermedical'],
-    queryFn: () => getUserWithMedical()
+    queryKey:['usermedical', id],
+    queryFn: () => getUserInfo(id)
   })
   return query
 }
