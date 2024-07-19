@@ -9,7 +9,7 @@ const server = express()
 
 server.use(express.json())
 
-server.use('/api/v1/fruits', fruitRoutes)
+
 server.use('/api/v1/users', userRoutes)
 server.use('/api/v1/medical', medicalRoutes)
 
