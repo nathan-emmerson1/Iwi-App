@@ -1,4 +1,4 @@
-# Boilerplate: Fullstack with Sass
+# Iwi App
 
 ## Setup
 
