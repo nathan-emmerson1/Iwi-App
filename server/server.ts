@@ -1,14 +1,12 @@
 import express from 'express'
 import * as Path from 'node:path'
 
-import fruitRoutes from './routes/fruits.ts'
 import userRoutes from './routes/user.ts'
 import medicalRoutes from './routes/medical.ts'
 
 const server = express()
 
 server.use(express.json())
-
 
 server.use('/api/v1/users', userRoutes)
 server.use('/api/v1/medical', medicalRoutes)
