@@ -1,13 +1,10 @@
-/** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./client/**/*.{tsx,js,jsx,ts}'],
-  theme: { 
-    
+  content: ['./index.html', './client/**/*.tsx'],
+  theme: {
     extend: {},
   },
   plugins: [require('daisyui')],
-  daisyui: [
-    "valentine",
-
-  ]
+  corePlugins: {
+    scrollBehavior: true,
+  },
 }
